@@ -103,8 +103,8 @@ Proyecto en desarrollo activo como parte de la formación de desarrollo web full
 
 ### General
 - [ ] Diseño de la base de datos (entidades y relaciones)
-- [ ] Configuración inicial del backend (Spring Boot)
-- [ ] Configuración inicial del frontend (React)
+- [x] Configuración inicial del backend (Spring Boot)
+- [x] Configuración inicial del frontend (React)
 - [ ] Conexión entre backend y frontend (API REST)
 - [ ] Documentación básica de la API en Postman
 
