@@ -1,0 +1,155 @@
+/* Página principal */
+.home-page {
+  padding-top: 80px; /* Deja espacio para la navbar fija */
+}
+
+/* 🎯 Sección principal tipo "Hero" con fondo y texto centrado */
+.hero-banner {
+  height: 85vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6), 
+      rgba(0, 0, 0, 0.6)
+    ),
+    url('../assets/homeimg.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+  color: #fff;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 800px;
+  animation: fadeIn 1.5s ease-in-out; /* Animación de entrada suave */
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #f39c12;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* 🔘 Botón de llamada a la acción */
+.cta-button {
+  background-color: #f39c12;
+  color: #fff;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+  background-color: #e67e22;
+  transform: scale(1.05);
+}
+
+/* 💫 Animación de aparición */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🚘 Sección de vehículos destacados */
+.featured-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featured-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.vehicle-slider-container {
+  padding: 0 1rem;
+  margin: 2rem 0;
+}
+
+/* 🛠️ Sección de servicios */
+.services-section {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.services-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tarjeta de cada servicio */
+.service-card {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../assets/imgicon.png') center/cover no-repeat;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.service-card p {
+  color: #ecf0f1;
+}
+
+/* 📱 Ajustes responsivos para móviles */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .featured-section, .services-section {
+    padding: 2rem 1rem;
+  }
+}
