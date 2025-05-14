@@ -1,4 +1,9 @@
 package com.velocicar.velocicar.model;
+/**
+ * @author Borja Merchan Mckenna
+ * 
+ * <b> 
+ */
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -9,12 +14,32 @@ public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String type;
+    @Enumerated(EnumType.STRING)
+    
+    
+    private VehicleType type; 
     private String brand;
     private String model;
     private String licensePlate;
     private Double pricePerDay;
-    public Long getId() {
+    
+    
+	private boolean available;
+    
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                ", brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", licensePlate='" + licensePlate + '\'' +
+                ", pricePerDay=" + pricePerDay +
+                ", available=" + available +
+                '}';
+    }
+
+	public Long getId() {
 		return id;
 	}
 
@@ -22,12 +47,20 @@ public class Vehicle {
 		this.id = id;
 	}
 
-	public String getType() {
+	public VehicleType getType() {
 		return type;
 	}
 
-	public void setType(String type) {
+	public void setType(VehicleType type) {
 		this.type = type;
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
 	}
 
 	public String getModel() {
@@ -62,28 +95,6 @@ public class Vehicle {
 		this.available = available;
 	}
 
-	public void setBrand(String brand) {
-		this.brand = brand;
-	}
-
-	private boolean available;
-    
-    @Override
-    public String toString() {
-        return "Vehicle{" +
-                "id=" + id +
-                ", type='" + type + '\'' +
-                ", brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", licensePlate='" + licensePlate + '\'' +
-                ", pricePerDay=" + pricePerDay +
-                ", available=" + available +
-                '}';
-    }
-
-	public String getBrand() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

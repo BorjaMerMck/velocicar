@@ -105,8 +105,8 @@ Proyecto en desarrollo activo como parte de la formación de desarrollo web full
 - [ ] Diseño de la base de datos (entidades y relaciones)
 - [x] Configuración inicial del backend (Spring Boot)
 - [x] Configuración inicial del frontend (React)
-- [ ] Conexión entre backend y frontend (API REST)
-- [ ] Documentación básica de la API en Postman
+- [x] Conexión entre backend y frontend (API REST)
+- [x] Documentación básica de la API en Postman
 
 ### Usuarios
 - [ ] Registro de usuarios
@@ -123,7 +123,9 @@ Proyecto en desarrollo activo como parte de la formación de desarrollo web full
 - [ ] Eliminar vehículo propio
 - [ ] Subida de imágenes del vehículo
 - [ ] Aprobación de vehículos por parte del administrador
-
+- [ ] Añadir mas tipos, 
+    crear un enum pagatinas  medioambiental, 
+    hacer un enum de manual o atomatico
 ### Alquiler y reservas
 - [ ] Buscar disponibilidad por fechas
 - [ ] Crear reserva
