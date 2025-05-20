@@ -80,7 +80,7 @@ const Home = () => {
             <p>Servicio de alquiler disponible en cualquier momento</p>
           </div>
           <div className="service-card">
-            <img src="/images/insurance.png" alt="Seguro" />
+            <img src="/assets/homeimg.png" alt="Seguro" />
             <h3>Seguro Incluido</h3>
             <p>Todos nuestros vehículos incluyen seguro a todo riesgo</p>
           </div>
@@ -95,7 +95,7 @@ const Home = () => {
 
       {/* Services Section */}
       <section className="services-section">
-        <h2>Nuestros Servicios</h2>
+        <h2>Por qué suscribirte a VelociCar</h2>
         <div className="services-grid">
           <div className="service-card">
             <img src="" alt="Disponibilidad" />
