@@ -1,6 +1,6 @@
 # VelociCar
 
-**VelociCar** es una aplicación web full-stack para el alquiler y préstamo de vehículos, desarrollada como parte de un proyecto de formación en **Gammatech** con el apoyo de **Fund Ransd**.
+**VelociCar** es una aplicación web full-stack para el alquiler y préstamo de vehículos,
 
 Permite a los usuarios alquilar vehículos por días y también publicar sus propios vehículos para que otros puedan reservarlos. Además, la empresa VelociCar gestiona una flota oficial propia. La aplicación está desarrollada usando **Spring Boot** (backend), **React** (frontend) y **Postman** (para pruebas de API).
 
