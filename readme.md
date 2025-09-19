@@ -220,6 +220,7 @@ velocicar-frontend/
 ## Créditos
 
 Desarrollado por Borja Merchan Mckenna.  
-Formación realizada en **Gammatech** con el apoyo de **Fund Ransd**.
 
+
+https://astaramove.com/catalogo --> pagina que me aspirado mas o menos
 

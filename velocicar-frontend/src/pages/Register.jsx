@@ -1,128 +1,70 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FaUser, FaLock, FaEnvelope, FaPhone } from 'react-icons/fa';
-import '../styles/Auth.css';
+import axios from 'axios';
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    nombreCompleto: '',
     email: '',
-    phone: '',
-    password: '',
-    confirmPassword: ''
+    password: ''
   });
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
+    setFormData(prev => ({
+      ...prev,
       [e.target.name]: e.target.value
-    });
+    }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aquí irá la lógica de registro
-    console.log('Register data:', formData);
+    console.log("✅ Formulario enviado:", formData);
+
+    try {
+      const res = await axios.post('http://localhost:8080/api/auth/register', formData);
+      alert("✅ Registro exitoso");
+      console.log("Respuesta del backend:", res.data);
+    } catch (err) {
+      console.error("❌ Error al registrar:", err);
+      alert("❌ Error al registrar");
+    }
   };
 
   return (
     <div className="auth-container">
-      <div className="auth-box">
-        <div className="auth-header">
-          <div className="logo-circle">
-            <div className="logo"></div>
-          </div>
-          <h2>Únete a VelociCar</h2>
-          <p>Crea tu cuenta para empezar</p>
-        </div>
+    <div className="auth-box">
+      <h2>Registro</h2>
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <label>Nombre completo</label>
+        <input
+          name="nombreCompleto"
+          value={formData.nombreCompleto}
+          onChange={handleChange}
+          required
+        />
 
-        <form onSubmit={handleSubmit} className="auth-form">
-          <div className="form-group">
-            <div className="input-icon">
-              <FaUser />
-              <input
-                type="text"
-                name="name"
-                placeholder="Nombre completo"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          </div>
+        <label>Email</label>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
 
-          <div className="form-group">
-            <div className="input-icon">
-              <FaEnvelope />
-              <input
-                type="email"
-                name="email"
-                placeholder="Correo electrónico"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          </div>
+        <label>Contraseña</label>
+        <input
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+          required
+        />
 
-          <div className="form-group">
-            <div className="input-icon">
-              <FaPhone />
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Teléfono"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          </div>
-
-          <div className="form-group">
-            <div className="input-icon">
-              <FaLock />
-              <input
-                type="password"
-                name="password"
-                placeholder="Contraseña"
-                value={formData.password}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          </div>
-
-          <div className="form-group">
-            <div className="input-icon">
-              <FaLock />
-              <input
-                type="password"
-                name="confirmPassword"
-                placeholder="Confirmar contraseña"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          </div>
-
-          <button type="submit" className="auth-button">
-            Registrarse
-          </button>
-        </form>
-
-        <div className="auth-footer">
-          <p>
-            ¿Ya tienes una cuenta?{' '}
-            <Link to="/login" className="auth-link">
-              Inicia sesión aquí
-            </Link>
-          </p>
-        </div>
-      </div>
+        <button type="submit">Registrarse</button>
+      </form>
     </div>
-  );
+  </div>
+);
 };
 
-export default Register; 
+export default Register;

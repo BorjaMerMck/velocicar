@@ -95,6 +95,6 @@ public class Vehicle {
 		this.available = available;
 	}
 
-	
 
+	
 }

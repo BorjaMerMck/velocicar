@@ -80,7 +80,7 @@ const Home = () => {
             <p>Servicio de alquiler disponible en cualquier momento</p>
           </div>
           <div className="service-card">
-            <img src="/assets/homeimg.png" alt="Seguro" />
+            <img src="/assets/.png" alt="Seguro" />
             <h3>Seguro Incluido</h3>
             <p>Todos nuestros vehículos incluyen seguro a todo riesgo</p>
           </div>
