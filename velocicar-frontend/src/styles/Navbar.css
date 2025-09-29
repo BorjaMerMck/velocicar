@@ -41,7 +41,7 @@
 .brand-name {
   font-size: 1.5rem;
   font-weight: bold;
-  color: white;
+  color: rgb(70, 46, 46);
 }
 
 .nav-links {
@@ -87,6 +87,105 @@
 
 .login-btn:hover, .register-btn:hover {
   color: #f39c12;
+}
+
+/* User Menu Styles */
+.user-menu {
+  position: relative;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-info:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.user-icon {
+  font-size: 1rem;
+}
+
+.user-name {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.dropdown-icon {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.user-info:hover .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgb(54, 40, 40);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.user-menu:hover .user-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #f39c12;
+}
+
+.dropdown-item .icon {
+  font-size: 1rem;
+  color: #666;
+}
+
+.dropdown-item:hover .icon {
+  color: #f39c12;
+}
+
+.logout-btn {
+  border-top: 1px solid #eee;
+  color: #e74c3c;
+}
+
+.logout-btn:hover {
+  background-color: #fdf2f2;
+  color: #c0392b;
 }
 
 @media (max-width: 768px) {

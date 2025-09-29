@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaUser, FaLock } from 'react-icons/fa';
 import '../styles/Auth.css';
 
-const Login = () => {
+const Login = ({ onLoginSuccess }) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -16,10 +18,34 @@ const Login = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aquí irá la lógica de autenticación
-    console.log('Login data:', formData);
+    setIsLoading(true);
+    
+    try {
+      // Simulamos una llamada a la API
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Simular delay de red
+      
+      // Aquí iría la lógica real de autenticación
+      // Por ahora simulamos un login exitoso
+      console.log('Login data:', formData);
+      
+      // Si el login es exitoso, llamamos a la función callback
+      if (onLoginSuccess) {
+        onLoginSuccess(formData);
+      }
+      
+      // Redirigir al home después del login exitoso
+      setTimeout(() => {
+        navigate('/');
+      }, 1500); // Esperar un poco para que se vea la notificación
+      
+    } catch (error) {
+      console.error('Error en el login:', error);
+      // Aquí podrías mostrar un mensaje de error
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -72,8 +98,8 @@ const Login = () => {
             </Link>
           </div>
 
-          <button type="submit" className="auth-button">
-            Iniciar Sesión
+          <button type="submit" className="auth-button" disabled={isLoading}>
+            {isLoading ? 'Iniciando sesión...' : 'Iniciar Sesión'}
           </button>
         </form>
 
