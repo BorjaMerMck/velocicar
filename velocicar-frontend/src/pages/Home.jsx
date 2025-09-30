@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Slider from 'react-slick';
 import VehicleCard from '../components/VehicleCard';
+import { useNavigate } from 'react-router-dom'; // 👈 añade esto
 import '../styles/Home.css';
 
 const Home = () => {
+  const navigate = useNavigate(); // 👈 define navigate aquí
+
   const [vehicles, setVehicles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -40,20 +43,22 @@ const Home = () => {
     ]
   };
 
-  if (loading) return <div className="loading">Cargando...</div>;
-  if (error) return <div className="error">{error}</div>;
-
   return (
     <div className="home-page">
-    {/* Hero Banner */}
-    <section className="hero-banner">
-      <div className="hero-content">
-        <h1>La mejor forma de moverte con libertad</h1>
-        <h2>Alquila un vehículo o presta el tuyo con VelociCar</h2>
-        <p>Explora nuestra flota y elige el vehículo perfecto para tu próxima aventura</p>
-        <button className="cta-button">Registrarte</button>
-      </div>
-    </section>
+      {/* Hero Banner */}
+      <section className="hero-banner">
+        <div className="hero-content">
+          <h1>La mejor forma de moverte con libertad</h1>
+          <h2>Alquila un vehículo o presta el tuyo con VelociCar</h2>
+          <p>Explora nuestra flota y elige el vehículo perfecto para tu próxima aventura</p>
+          <button 
+            onClick={() => navigate('/register')} 
+            className="cta-button"
+          >
+            Registrarte
+          </button>
+        </div>
+      </section>
   
 
       {/* Featured Vehicles */}
