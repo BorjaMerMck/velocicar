@@ -20,6 +20,8 @@ public class Register {
         return email;
     }
 
+
+    
     public String getPassword() {
         return password;
     }
